@@ -1,0 +1,34 @@
+name: Verify static site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install project metadata
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validate source and artifact
+        run: npm test
+      - name: Confirm artifact allowlist
+        run: |
+          test "$(find _site -type f | sort | tr '\n' ' ')" = "$(printf '%s\n' \
+            _site/404.html \
+            _site/assets/app.js \
+            _site/assets/styles.css \
+            _site/icon.svg \
+            _site/index.html \
+            _site/site.webmanifest | sort | tr '\n' ' ')"
