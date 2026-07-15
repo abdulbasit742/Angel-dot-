@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title description">
+  <title id="title">Angel Dot mark</title>
+  <desc id="description">A purple dot inside two thin circular orbits.</desc>
+  <rect width="64" height="64" rx="16" fill="#f7f4ff"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#b8a5d1" stroke-width="2"/>
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#d5c8e5" stroke-width="2"/>
+  <circle cx="32" cy="32" r="8" fill="#6d28d9"/>
+  <circle cx="49" cy="17" r="3" fill="#0f766e"/>
+</svg>
