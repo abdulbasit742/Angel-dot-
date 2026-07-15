@@ -5,6 +5,7 @@ import process from 'node:process';
 const root = resolve(process.argv[2] || resolve(import.meta.dirname, '..'));
 const errors = [];
 const requiredFiles = ['index.html', '404.html', 'icon.svg', 'site.webmanifest', 'assets/styles.css', 'assets/app.js'];
+const skippedDirectories = new Set(['.git', 'node_modules', '_site']);
 
 const fail = (message) => errors.push(message);
 const exists = async (path) => access(path).then(() => true).catch(() => false);
@@ -70,8 +71,9 @@ const scanFiles = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
   for (const entry of entries) {
     const fullPath = resolve(directory, entry.name);
-    if (entry.isDirectory()) await scanFiles(fullPath);
-    else {
+    if (entry.isDirectory()) {
+      if (!skippedDirectories.has(entry.name)) await scanFiles(fullPath);
+    } else {
       const info = await stat(fullPath);
       if (info.size > 1_000_000) fail(`Unexpected file larger than 1 MB: ${fullPath.slice(root.length + 1)}`);
       if (['.pem', '.key', '.p12', '.pfx'].includes(extname(entry.name).toLowerCase())) {
