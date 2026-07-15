@@ -1,0 +1,17 @@
+{
+  "name": "Angel Dot",
+  "short_name": "Angel Dot",
+  "description": "A lightweight, accessible static web project.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ff",
+  "theme_color": "#f7f4ff",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
