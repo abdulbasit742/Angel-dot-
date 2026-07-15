@@ -1,0 +1,14 @@
+{
+  "name": "angel-dot-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-site.mjs",
+    "build": "node scripts/build-site.mjs",
+    "test": "npm run check && npm run build && node scripts/check-site.mjs _site"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
