@@ -1,12 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="system">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Dot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angel Dot — Small ideas, clearly presented</title>
+  <meta name="description" content="Angel Dot is a lightweight, accessible static web project built for clarity, speed, and dependable delivery.">
+  <meta name="theme-color" content="#f7f4ff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17131f" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'">
+  <meta property="og:title" content="Angel Dot">
+  <meta property="og:description" content="A lightweight, accessible static web project built for clarity, speed, and dependable delivery.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="icon.svg">
+  <meta property="og:image:alt" content="Angel Dot circular mark">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to Angel Dot</h1>
-    <p>This is a basic page for the Angel Dot project.</p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Angel Dot home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Angel Dot</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#principles">Principles</a>
+      <a href="#status">Status</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Use dark theme">
+      <span aria-hidden="true">◐</span>
+    </button>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A small, dependable web presence</p>
+        <h1 id="hero-title">Small ideas deserve a clear place to begin.</h1>
+        <p class="lede">Angel Dot is a dependency-free static project focused on readable content, accessible interaction, fast delivery, and simple maintenance.</p>
+        <div class="actions" aria-label="Page shortcuts">
+          <a class="button primary" href="#principles">See the principles</a>
+          <a class="button secondary" href="#status">View project status</a>
+        </div>
+      </div>
+      <div class="orbital" aria-hidden="true">
+        <span class="orbit orbit-one"></span>
+        <span class="orbit orbit-two"></span>
+        <span class="dot dot-main"></span>
+        <span class="dot dot-small"></span>
+      </div>
+    </section>
+
+    <section class="section" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading">
+        <p class="eyebrow">Built-in principles</p>
+        <h2 id="principles-title">Useful defaults, without unnecessary weight.</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-number" aria-hidden="true">01</span>
+          <h3>Accessible by design</h3>
+          <p>Semantic landmarks, visible keyboard focus, a skip link, strong contrast, and reduced-motion support are part of the baseline.</p>
+        </article>
+        <article class="card">
+          <span class="card-number" aria-hidden="true">02</span>
+          <h3>Privacy-respecting</h3>
+          <p>No trackers, third-party fonts, remote scripts, forms, or analytics are loaded. The browser receives only the files needed for this page.</p>
+        </article>
+        <article class="card">
+          <span class="card-number" aria-hidden="true">03</span>
+          <h3>Easy to operate</h3>
+          <p>A dependency-free validation and build step checks the site before GitHub Pages receives an allowlisted deployment artifact.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section status-section" id="status" aria-labelledby="status-title">
+      <div>
+        <p class="eyebrow">Project status</p>
+        <h2 id="status-title">Ready as a secure static foundation.</h2>
+        <p>The repository now separates source from deployment output and verifies internal links, required accessibility features, local assets, and security-sensitive markup before publishing.</p>
+      </div>
+      <dl class="status-list">
+        <div>
+          <dt>Runtime</dt>
+          <dd>Static HTML, CSS, and JavaScript</dd>
+        </div>
+        <div>
+          <dt>Dependencies</dt>
+          <dd>None at runtime or build time</dd>
+        </div>
+        <div>
+          <dt>Hosting</dt>
+          <dd>GitHub Pages</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <p class="eyebrow">About this page</p>
+      <h2 id="about-title">A focused starting point, not an invented product claim.</h2>
+      <p>Angel Dot currently has no documented commercial or application scope. This page therefore provides an honest, adaptable project foundation instead of presenting features that do not exist.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span data-current-year>2026</span> Angel Dot.</p>
+    <p>Built with local assets and progressive enhancement.</p>
+  </footer>
 </body>
 </html>
